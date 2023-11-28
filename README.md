@@ -40,7 +40,7 @@ class Controller {
     +convertirCelsiusEnKelvins() void
     +getRefView() View
     +getRefServiceTemperature() ServiceTemperature
-    +ViewExiting() void
+    +viewExiting() void
     +setRefView(View view) void
     +setRefServiceTemperature(ServiceTemperature service) void
     +start() void
