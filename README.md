@@ -12,7 +12,7 @@ Si votre code est correctement implémenté selon les directives reçues, vous d
 
 ### Diagramme de classes
 
-```mermaid
+```mermaid 
 classDiagram
 
 class Application {
