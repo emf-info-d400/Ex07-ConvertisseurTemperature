@@ -1,6 +1,5 @@
-package ihm;
+package temperature.view;
 
-import ctrl.Controller;
 import java.awt.Image;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -11,8 +10,10 @@ import javax.swing.UIManager;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
+import temperature.ctrl.Controller;
+
 /**
- * Classe représentant l'ihm de l'application MVC2 "ConvertisseurDeTemperature" de l'exercice "Convertisseur de température MVC2" du module 404.
+ * Classe représentant la vue de l'application MVC "ConvertisseurDeTemperature" de l'exercice "Convertisseur de température MVC" du module D400.
  *
  * @author <a href="mailto:friedlip@edufr.ch">Paul Friedli</a>
  * @since 18.04.2016
@@ -52,12 +53,12 @@ public class View extends javax.swing.JFrame {
      /**
       * La référence au contrôleur de l'application.
       */
-     private Ctrl refCtrl;
+     private Controller refCtrl;
  
      private ChangeListener tempSliderChangeListener;
 
     /**
-     * Constructeur de la classe Ihm. Ce constructeur crée l'ihm, l'initialise correctement et mais ne l'affiche pas
+     * Constructeur de la classe View. Ce constructeur crée la vue, l'initialise correctement et mais ne l'affiche pas
      * encore.
      */
     public View() {
@@ -102,7 +103,7 @@ public class View extends javax.swing.JFrame {
         }
 
         // Définir le titre de l'application
-        setTitle( "ConvertisseurDeTemperature v1.0 - written by Paul Friedli" );
+        setTitle( "ConvertisseurDeTemperature v1.1 - written by Paul Friedli" );
 
         // Ne pas fermer la fenêtre automatiquement, nous appellerons dispose() nous-même.
         setDefaultCloseOperation( javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE );
@@ -115,7 +116,7 @@ public class View extends javax.swing.JFrame {
             @Override
             public void windowClosing( WindowEvent we ) {
                 // Signalons au contrôleur que l'utilisateur veut quitter.
-                ihmExiting();
+                viewExiting();
             }
         } );
 
@@ -139,7 +140,7 @@ public class View extends javax.swing.JFrame {
      * Cette méthode est appelée par le contrôleur de l'application pour démarrer l'ihm. En l'occurrence ici on ne fait
      * que de rendre visible notre fenêtre car tout a déjà été préparé par le constructeur.
      */
-    public void ihmStart() {
+    public void viewStart() {
         // Afficher l'ihm
         setVisible( true );
     }
@@ -209,11 +210,11 @@ public class View extends javax.swing.JFrame {
      * Cette méthode est appelée pour indiquer que l'application est en train de se fermer. Cela permet d'informer le
      * contrôleur de cet état de fait.
      */
-    private void ihmExiting() {
+    private void viewExiting() {
         ImageIcon questionIcon = new ImageIcon( getClass().getResource( "resources/icon-question-64.png" ) );
         if ( JOptionPane.showConfirmDialog( getRootPane(), "Voulez-vous vraiment quitter ?", "Question", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE, questionIcon ) == JOptionPane.YES_OPTION ) {
             // Informer le contrôleur qu'on veut quitter
-            getRefCtrl().ihmExiting();
+            getRefCtrl().viewExiting();
 
             // Arrêter ce qui doit être arrêté côté Ihm (timer, threads, ..)
             // rien à faire...
@@ -227,7 +228,7 @@ public class View extends javax.swing.JFrame {
      *
      * @return la référence au contrôleur de l'application
      */
-    public Ctrl getRefCtrl() {
+    public Controller getRefCtrl() {
         return refCtrl;
     }
 
@@ -236,7 +237,7 @@ public class View extends javax.swing.JFrame {
      *
      * @param ctrl la nouvelle référence au contrôleur de l'application
      */
-    public void setRefCtrl( Ctrl ctrl ) {
+    public void setRefCtrl( Controller ctrl ) {
         this.refCtrl = ctrl;
     }
 
@@ -277,7 +278,7 @@ public class View extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
 
         jButtonQuitter.setFont(new java.awt.Font("Arial", 0, 13)); // NOI18N
-        jButtonQuitter.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihm/resources/door-32.png"))); // NOI18N
+        jButtonQuitter.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/door-32.png"))); // NOI18N
         jButtonQuitter.setText("Quitter");
         jButtonQuitter.setToolTipText("Pour quitter l'application");
         jButtonQuitter.addActionListener(new java.awt.event.ActionListener() {
@@ -288,7 +289,7 @@ public class View extends javax.swing.JFrame {
 
         jLabelSwissSoftwareLogo.setBackground(new java.awt.Color(255, 255, 255));
         jLabelSwissSoftwareLogo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelSwissSoftwareLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihm/resources/swiss-made-software.png"))); // NOI18N
+        jLabelSwissSoftwareLogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/swiss-made-software.png"))); // NOI18N
         jLabelSwissSoftwareLogo.setToolTipText("Battons-nous pour la qualité !");
         jLabelSwissSoftwareLogo.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabelSwissSoftwareLogo.setOpaque(true);
@@ -317,12 +318,12 @@ public class View extends javax.swing.JFrame {
         );
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihm/resources/appIcon-128.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/appIcon-128.png"))); // NOI18N
         jLabel2.setText("<html>Convertisseur&nbsp;&nbsp;&nbsp;<div align=\"right\"><font size=\"2\" color=\"gray\" face=\"Arial\">Écrit par Paul FRIEDLI, Copyrights © 2016&nbsp;&nbsp;</font></div></html>");
 
         jLabelLogoLogus.setBackground(new java.awt.Color(255, 255, 255));
         jLabelLogoLogus.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelLogoLogus.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihm/resources/EMF_Info.jpg"))); // NOI18N
+        jLabelLogoLogus.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/EMF_Info.jpg"))); // NOI18N
         jLabelLogoLogus.setToolTipText("Ca, c'est nous !");
         jLabelLogoLogus.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jLabelLogoLogus.setOpaque(true);
@@ -363,23 +364,23 @@ public class View extends javax.swing.JFrame {
 
         jPanel2.setLayout(new java.awt.GridLayout(1, 5));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihm/resources/cold-64.png"))); // NOI18N
+        jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/cold-64.png"))); // NOI18N
         jPanel2.add(jLabel9);
 
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihm/resources/temp-low-64.png"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/temp-low-64.png"))); // NOI18N
         jPanel2.add(jLabel11);
 
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihm/resources/temp-med-64.png"))); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/temp-med-64.png"))); // NOI18N
         jPanel2.add(jLabel13);
 
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihm/resources/temp-high-64.png"))); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/temp-high-64.png"))); // NOI18N
         jPanel2.add(jLabel12);
 
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihm/resources/hot-64.png"))); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/hot-64.png"))); // NOI18N
         jPanel2.add(jLabel10);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -404,7 +405,7 @@ public class View extends javax.swing.JFrame {
         );
 
         jLabelUniteSource.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabelUniteSource.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihm/resources/temp-logo-32.png"))); // NOI18N
+        jLabelUniteSource.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/temp-logo-32.png"))); // NOI18N
         jLabelUniteSource.setText("°C");
 
         jLabelTempSource.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
@@ -475,7 +476,7 @@ public class View extends javax.swing.JFrame {
         jPanel29.setLayout(new java.awt.GridLayout(2, 1));
 
         jButtonConvertirCelsiusEnFahrenheits.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jButtonConvertirCelsiusEnFahrenheits.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihm/resources/convert-48.png"))); // NOI18N
+        jButtonConvertirCelsiusEnFahrenheits.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/convert-48.png"))); // NOI18N
         jButtonConvertirCelsiusEnFahrenheits.setText("Convertir  °C en °F     ");
         jButtonConvertirCelsiusEnFahrenheits.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButtonConvertirCelsiusEnFahrenheits.addActionListener(new java.awt.event.ActionListener() {
@@ -486,7 +487,7 @@ public class View extends javax.swing.JFrame {
         jPanel29.add(jButtonConvertirCelsiusEnFahrenheits);
 
         jButtonConvertirCelsiusEnKelvins.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jButtonConvertirCelsiusEnKelvins.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihm/resources/convert-48.png"))); // NOI18N
+        jButtonConvertirCelsiusEnKelvins.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/convert-48.png"))); // NOI18N
         jButtonConvertirCelsiusEnKelvins.setText("Convertir  °C en °K     ");
         jButtonConvertirCelsiusEnKelvins.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
         jButtonConvertirCelsiusEnKelvins.addActionListener(new java.awt.event.ActionListener() {
@@ -497,7 +498,7 @@ public class View extends javax.swing.JFrame {
         jPanel29.add(jButtonConvertirCelsiusEnKelvins);
 
         jLabelUniteConvertie.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabelUniteConvertie.setIcon(new javax.swing.ImageIcon(getClass().getResource("/ihm/resources/temp-logo-32.png"))); // NOI18N
+        jLabelUniteConvertie.setIcon(new javax.swing.ImageIcon(getClass().getResource("resources/temp-logo-32.png"))); // NOI18N
         jLabelUniteConvertie.setText("°C");
 
         jLabelTempConvertie.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
@@ -578,7 +579,7 @@ public class View extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButtonQuitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonQuitterActionPerformed
-        ihmExiting();
+        viewExiting();
     }//GEN-LAST:event_jButtonQuitterActionPerformed
 
     private void jButtonConvertirCelsiusEnFahrenheitsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvertirCelsiusEnFahrenheitsActionPerformed

@@ -34,7 +34,7 @@ class Controller {
     +UNITE_TEMPERATURE_KELVIN String$
     -temperatureActuelle int
     -View refView
-    -ServiceTemperature service
+    -ServiceTemperature refService
     +Controller()
     +convertirCelsiusEnFahrenheits() void
     +convertirCelsiusEnKelvins() void
@@ -48,12 +48,13 @@ class Controller {
 }
 
 class View {
+    -Controller refController
     +View()
+    -viewExiting() void
+    -initComponents() void
+    +viewStart() void
     +afficherTemperatureAConvertir(int temp) void
     +afficherTemperatureConvertie(String, String) void
-    -ViewExiting() void
-    +ViewStart() void
-    -initComponents() void
     +messageErreur(String message) void
     +messageInformation(String message) void
     +messageQuestion(String message) void
@@ -92,7 +93,7 @@ sequenceDiagram
     Controller-->>main: refController=
     main->>ServiceTemperature: new ServiceTemperature()
     ServiceTemperature-->>main: refService=
-    main->>Controller: setRefCtrl(refController)
+    main->>Controller: setRefServiceTemperature(refService)
     main->>View: new View()
     View-->>main: refView=
     main->>View: setRefCtrl(refController)
