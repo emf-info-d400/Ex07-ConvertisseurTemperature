@@ -61,10 +61,10 @@ class View {
     +setRefCtrl(Controller ctrl)
  }
 
-Controller o--> "1" ServiceTemperature : -refController
-ServiceTemperature o--> "1" Controller : -refService
-View o--> "1" Controller : -refView
-Controller o--> "1" View : -refController
+ServiceTemperature o--> "1" Controller : -refController
+Controller o--> "1" ServiceTemperature : -refService
+Controller o--> "1" View : -refView
+View o--> "1" Controller : -refController
 
 ```
 ### Structure des packages Java
