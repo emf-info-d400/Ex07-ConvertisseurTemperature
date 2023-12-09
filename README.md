@@ -1,4 +1,4 @@
-# Exercice 08 : Convertisseur de température
+# Exercice 07 : Convertisseur de température
 ## durée : 120'
 ## Objectifs visés :
 Comprendre MVC ; Maitriser les diagrammes de séquence ; Maitriser les diagrammes de classes ; Se référer à la Javadoc.
