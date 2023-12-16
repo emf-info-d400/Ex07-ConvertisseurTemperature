@@ -88,17 +88,18 @@ namespace view {
 Voici le diagramme de séquence de la méthode de la méthode `main()` de la classe `Application` du package `app` :
 ```mermaid
 sequenceDiagram
-    participant main
-    main->>Controller: new Controller()
-    Controller-->>main: refController=
-    main->>ServiceTemperature: new ServiceTemperature()
-    ServiceTemperature-->>main: refService=
-    main->>Controller: setRefServiceTemperature(refService)
-    main->>View: new View()
-    View-->>main: refView=
-    main->>View: setRefCtrl(refController)
-    main->>ServiceTemperature: setRefCtrl(refController)
-    main->>Controller: start()
+    participant app.Application.main()
+    create participant refCtrl
+    app.Application.main()->>refCtrl: new Controller()
+    create participant refServiceTemperature
+    app.Application.main()->>refServiceTemperature: new ServiceTemperature()
+    app.Application.main()->>refCtrl: setRefServiceTemperature(refServiceTemperature)
+    create participant refView
+    app.Application.main()->>refView: new View()
+    app.Application.main()->>refCtrl: setRefView(refView)
+    app.Application.main()->>refView: setRefCtrl(refCtrl)
+    app.Application.main()->>refServiceTemperature: setRefCtrl(refctrl)
+    app.Application.main()->>refCtrl: start()
 ```
 ### Javadoc
 Vous pouvez cliquer sur [ce lien pour obtenir la JavaDoc en HTML](javadoc/index.html) de l'application **ConvertisseurTemperature**.
