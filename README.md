@@ -1,5 +1,5 @@
 # Exercice 07 : Convertisseur de température
-## durée : 120'
+## Durée : 120'
 ## Objectifs visés :
 Comprendre MVC ; Maitriser les diagrammes de séquence ; Maitriser les diagrammes de classes ; Se référer à la Javadoc.
 
@@ -7,7 +7,8 @@ Comprendre MVC ; Maitriser les diagrammes de séquence ; Maitriser les diagramme
 Lisez avec attention les informations fournies ci-après sous diverses formes (diagramme de classe, javadoc, diagrammes de séquence, …) car vous y trouverez toutes les informations utiles afin de finaliser le projet Java « **ConvertisseurTemperature** ».
 
 ## Résultat à obtenir
-Si votre code est correctement implémenté selon les directives reçues, vous devriez obtenir une application fonctionnelle ressemblant à cela :
+Si votre code est correctement implémenté selon les directives reçues, vous devriez obtenir une application fonctionnelle ressemblant à cela :  
+
 ![interface](images/interface_final.png)
 
 ### Diagramme de classes
