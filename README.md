@@ -33,19 +33,19 @@ class Controller {
     +UNITE_TEMPERATURE_CELSIUS String$
     +UNITE_TEMPERATURE_FAHRENHEIT String$
     +UNITE_TEMPERATURE_KELVIN String$
-    -temperatureActuelle int
+    -int temperatureActuelle
     -View refView
     -ServiceTemperature refService
     +Controller()
+    +start() void
+    +viewExiting() void
+    +temperatureAConvertirModifiee(int temp) void
     +convertirCelsiusEnFahrenheits() void
     +convertirCelsiusEnKelvins() void
     +getRefView() View
     +getRefServiceTemperature() ServiceTemperature
-    +viewExiting() void
     +setRefView(View view) void
     +setRefServiceTemperature(ServiceTemperature service) void
-    +start() void
-    +temperatureAConvertirModifiee(int temp) void
 }
 
 class View {
