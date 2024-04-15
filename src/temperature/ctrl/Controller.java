@@ -15,21 +15,6 @@ import temperature.view.View;
 public class Controller {
 
     /**
-     * Référence au service température de l'application.
-     */
-    // VOTRE CODE ICI...
-
-    /**
-     * Référence à la vue principale de l'application.
-     */
-    // VOTRE CODE ICI...
-
-    /**
-     * La température à convertir actuelle.
-     */
-    // VOTRE CODE ICI...
-
-    /**
      * Constante qui représente la lettre majuscule utilisée pour l'unité de
      * température Celsius.
      */
@@ -44,6 +29,21 @@ public class Controller {
     /**
      * Constante qui représente la lettre majuscule utilisée pour l'unité de
      * température Kelvins.
+     */
+    // VOTRE CODE ICI...
+
+    /**
+     * Référence au service température de l'application.
+     */
+    // VOTRE CODE ICI...
+
+    /**
+     * Référence à la vue principale de l'application.
+     */
+    // VOTRE CODE ICI...
+
+    /**
+     * La température à convertir actuelle.
      */
     // VOTRE CODE ICI...
 
@@ -123,7 +123,7 @@ public class Controller {
     /**
      * Getter de la référence au service température de l'application.
      *
-     * @return la référence au Worker de l'application
+     * @return la référence au service de l'application
      */
     public ServiceTemperature getRefServiceTemperature() {
         // VOTRE CODE ICI...
@@ -132,7 +132,7 @@ public class Controller {
     /**
      * Setter de la référence au service température de l'application.
      *
-     * @param refService la référence au worker de l'application
+     * @param refService la référence au service de l'application
      */
     public void setRefServiceTemperature(ServiceTemperature refService) {
         // VOTRE CODE ICI...
